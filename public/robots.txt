@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+Allow: /demo
+Allow: /privacy
+Allow: /terms
+
+# Disallow private and API routes
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+
+Sitemap: https://sagarnetra.in/sitemap.xml

@@ -1,5 +1,17 @@
 services:
-  # ── 1. Express API Gateway (Node.js) ────────────────────────────────────
+  # ── 1. Python FastAPI ML Service ─────────────────────────────────────────
+  - type: web
+    name: sagarnetra-ml
+    runtime: python
+    rootDir: ml-service
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    plan: free
+    envVars:
+      - key: ML_API_KEY
+        generateValue: true
+
+  # ── 2. Express API Gateway (Node.js) ────────────────────────────────────
   - type: web
     name: sagarnetra-api
     runtime: node
@@ -18,21 +30,9 @@ services:
           type: web
           property: host
       - key: ML_API_KEY
-        generateValue: true
-      - key: CLIENT_ORIGIN
-        value: https://your-app.netlify.app
-
-  # ── 2. Python FastAPI ML Service ─────────────────────────────────────────
-  - type: web
-    name: sagarnetra-ml
-    runtime: python
-    rootDir: ml-service
-    buildCommand: pip install -r requirements.txt
-    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
-    plan: free
-    envVars:
-      - key: ML_API_KEY
         fromService:
-          name: sagarnetra-api
+          name: sagarnetra-ml
           type: web
           envVarKey: ML_API_KEY
+      - key: CLIENT_ORIGIN
+        value: https://your-app.netlify.app

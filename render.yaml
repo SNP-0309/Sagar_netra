@@ -10,7 +10,7 @@ services:
     healthCheckPath: /health
     envVars:
       - key: ML_API_KEY
-        generateValue: true
+        sync: false
 
   # ── 2. Express API Gateway (Node.js) ────────────────────────────────────
   - type: web
@@ -25,14 +25,8 @@ services:
       - key: NODE_ENV
         value: production
       - key: ML_API_URL
-        fromService:
-          name: sagarnetra-ml
-          type: web
-          envVarKey: RENDER_EXTERNAL_URL
-      - key: ML_API_KEY
-        fromService:
-          name: sagarnetra-ml
-          type: web
-          envVarKey: ML_API_KEY
-      - key: CLIENT_ORIGIN
         sync: false
+      - key: ML_API_KEY
+        sync: false
+      - key: CLIENT_ORIGIN
+        value: https://sagar-netra-client-6hab.vercel.app

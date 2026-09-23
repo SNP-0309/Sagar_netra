@@ -9,6 +9,8 @@ services:
     plan: free
     healthCheckPath: /health
     envVars:
+      - key: PYTHON_VERSION
+        value: 3.13.4
       - key: ML_API_KEY
         sync: false
 

@@ -1,36 +1,56 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# SagarNetra AI
 
-## Getting Started
+SagarNetra AI analyzes side-scan sonar imagery and surfaces candidate marine
+debris and anomaly regions for operator review.
 
-First, run the development server:
+## Structure
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+```text
+client/       React + Vite interface
+server/       Express API gateway
+ml-service/   Python FastAPI analysis service
+data/         Synthetic upload fixtures
+docs/         Architecture notes
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Run locally
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Install dependencies:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```powershell
+npm install
+```
 
-## Learn More
+Start the Python analysis service:
 
-To learn more about Next.js, take a look at the following resources:
+```powershell
+cd ml-service
+pip install -r requirements.txt
+python -m uvicorn app.main:app --reload --port 8000
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Start the Express API in a second terminal:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```powershell
+npm run dev:server
+```
 
-## Deploy on Vercel
+Start the React client in a third terminal:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```powershell
+npm run dev:client
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Open `http://localhost:5173/analyze` and upload an image from
+`data/test-images/`.
+
+## Validate
+
+```powershell
+npm run build
+npm run test:ml
+```
+
+The current Python detector is a local-contrast baseline. Replace
+`ml-service/app/detector.py` with the trained model after labeled sonar data is
+available, keeping the response contract unchanged.

@@ -1,0 +1,148 @@
+/* Dashboard-only palette: charcoal surfaces, purple actions, vivid data accents. */
+.mission-shell {
+  --dash-bg: #17171f;
+  --dash-panel: #252530;
+  --dash-raised: #30303d;
+  --dash-border: #454554;
+  --dash-text: #f4f4f7;
+  --dash-muted: #b8b8c7;
+  --dash-accent: #a855f7;
+  --dash-accent-soft: #c084fc;
+  --dash-cyan: #22d3ee;
+  --dash-pink: #f43f8e;
+  --dash-ink: #17131f;
+  --dash-warning: #fbbf24;
+  --dash-danger: #fb7185;
+  background: var(--dash-bg);
+  color: var(--dash-text);
+  color-scheme: dark;
+}
+
+.mission-shell :focus-visible { outline-color: var(--dash-accent-soft); outline-offset: 4px; }
+.mission-shell .mission-header { background: #1e1e28; border-color: var(--dash-border); }
+.mission-shell .mission-nav { background: #121218; border-color: var(--dash-border); flex-wrap: wrap; }
+.mission-shell .mission-nav button { color: var(--dash-muted); min-height: 44px; font-size: .875rem; }
+.mission-shell .mission-nav button:hover { background: var(--dash-raised); color: var(--dash-text); }
+.mission-shell .mission-nav button.active { background: var(--dash-accent); color: var(--dash-text); box-shadow: 0 0 22px #a855f755; }
+.mission-shell .mission-header-actions button { background: var(--dash-raised); border-color: var(--dash-border); color: var(--dash-text); }
+.mission-shell .mission-brand strong { color: var(--dash-text); }
+.mission-shell .mission-brand small { color: var(--dash-muted); font-size: .625rem; }
+.mission-shell .mission-brand-mark { color: var(--dash-accent-soft); border-color: var(--dash-accent); box-shadow: 0 0 18px #a855f733; }
+.mission-shell .mission-live { color: var(--dash-cyan); font-size: .75rem; }
+.mission-shell .mission-stage { background: var(--dash-bg); }
+.mission-shell .mission-visual { background: #20202c; border-color: var(--dash-border); box-shadow: 0 16px 40px #05050966; }
+.mission-shell .mission-ocean-texture { background: radial-gradient(ellipse at 60% 46%, #8b5cf644, transparent 32%), linear-gradient(140deg, #3d3158, #292942 48%, #181821); }
+.mission-shell .mission-visual::after { background: linear-gradient(180deg, #17171f22, transparent 30%, #17171fcc); }
+.mission-shell .mission-telemetry { color: #dce8f6; font-size: .75rem; text-shadow: 0 1px 3px #000; }
+.mission-shell .mission-empty-state strong { color: var(--dash-text); }
+.mission-shell .mission-empty-state span:last-child { color: var(--dash-muted); font-size: .9375rem; }
+.mission-shell .mission-processing { color: var(--dash-accent-soft); font-size: .8125rem; }
+.mission-shell .mission-radar-icon, .mission-shell .mission-crosshair { color: var(--dash-accent-soft); }
+
+.mission-shell .mission-console-card,
+.mission-shell .mission-report-card,
+.mission-shell .mission-report-summary article,
+.mission-shell .mission-ops-card { background: var(--dash-panel); border-color: var(--dash-border); box-shadow: 0 12px 28px #060e1b26; }
+.mission-shell .mission-console-card { min-width: 0; }
+.mission-shell .mission-card-heading,
+.mission-shell .mission-report-card-title,
+.mission-shell .mission-ops-card-title { color: var(--dash-muted); font-size: .8125rem; letter-spacing: .055em; flex-wrap: wrap; }
+.mission-shell .mission-card-heading b,
+.mission-shell .mission-report-card-title b,
+.mission-shell .mission-ops-card-title b { color: var(--dash-accent-soft); font-size: .75rem; }
+.mission-shell .mission-console-tabs { color: var(--dash-muted); font-size: .75rem; flex-wrap: wrap; }
+.mission-shell .mission-console-tabs span.active { color: var(--dash-accent-soft); }
+.mission-shell .mission-vessel-card > strong { color: var(--dash-text); font-size: .9375rem; }
+.mission-shell .mission-vessel-card > small,
+.mission-shell .mission-meter-row { color: var(--dash-muted); font-size: .8125rem; }
+.mission-shell .mission-meter-row b { color: var(--dash-text); }
+.mission-shell .mission-meter { background: var(--dash-border); }
+.mission-shell .mission-meter i { background: linear-gradient(90deg, var(--dash-pink), var(--dash-accent), var(--dash-cyan)); box-shadow: none; }
+.mission-shell .mission-control-tile { background: #17263d; border-color: var(--dash-border); color: var(--dash-muted); }
+.mission-shell .mission-control-tile.active { color: var(--dash-accent-soft); background: #38294e; border-color: #8b5cf6; }
+.mission-shell .mission-control-tile small { font-size: .8125rem; }
+.mission-shell .mission-stage-list { color: var(--dash-muted); font-size: .75rem; flex-wrap: wrap; white-space: normal; }
+.mission-shell .mission-stage-list span.complete { color: var(--dash-cyan); }
+.mission-shell .mission-action-card p { color: var(--dash-muted); font-size: .875rem; }
+.mission-shell .mission-muted { color: var(--dash-muted); font-size: .875rem; }
+.mission-shell .mission-detection-list button { color: var(--dash-text); border-color: var(--dash-border); font-size: .875rem; padding: 10px 0; }
+.mission-shell .mission-detection-list button b { color: var(--dash-accent-soft); font-size: .8125rem; }
+.mission-shell .mission-detection-list button.selected { background: var(--dash-raised); }
+.mission-shell .mission-load-button,
+.mission-shell .mission-report-primary,
+.mission-shell .mission-ops-wide-button { background: linear-gradient(135deg, var(--dash-pink), var(--dash-accent)); color: var(--dash-text); border-color: var(--dash-accent); box-shadow: 0 8px 20px #a855f733; min-height: 44px; font-size: .8125rem; }
+.mission-shell .mission-load-button:hover,
+.mission-shell .mission-report-primary:hover,
+.mission-shell .mission-ops-wide-button:hover { background: linear-gradient(135deg, #fb6ba8, #c084fc); }
+.mission-shell .mission-reset-button,
+.mission-shell .mission-report-secondary { background: var(--dash-raised); color: var(--dash-text); border-color: var(--dash-border); font-size: .8125rem; min-height: 44px; }
+.mission-shell .mission-reset-button:hover,
+.mission-shell .mission-report-secondary:hover { border-color: var(--dash-accent-soft); }
+
+.mission-shell .mission-alert-card { background: #3b3024f5; border-color: #997637; }
+.mission-shell .mission-alert-card .eyebrow { color: var(--dash-warning); font-size: .75rem; }
+.mission-shell .mission-alert-card strong { color: #fff3d6; font-size: 1rem; }
+.mission-shell .mission-alert-card small { color: #ebd4a8; font-size: .8125rem; }
+.mission-shell .mission-alert-icon { color: var(--dash-warning); text-shadow: none; }
+.mission-shell .mission-alert-meter i { background: var(--dash-warning); box-shadow: none; }
+.mission-shell .mission-error { color: var(--dash-danger); white-space: normal; }
+
+.mission-shell .mission-report-view,
+.mission-shell .mission-ops-view { background: radial-gradient(ellipse at 90% 0, #8b5cf633, transparent 45%), var(--dash-bg); }
+.mission-shell .mission-report-header h1,
+.mission-shell .mission-ops-header h1 { color: var(--dash-text); }
+.mission-shell .mission-report-header p,
+.mission-shell .mission-ops-header p,
+.mission-shell .mission-report-notes > p,
+.mission-shell .mission-ops-note,
+.mission-shell .mission-report-empty { color: var(--dash-muted); }
+.mission-shell .mission-report-kicker { color: var(--dash-accent-soft); font-size: .8125rem; }
+.mission-shell .mission-report-summary strong { color: var(--dash-text); }
+.mission-shell .mission-report-summary span,
+.mission-shell .mission-report-summary small,
+.mission-shell .mission-report-notes dt { color: var(--dash-muted); font-size: .8125rem; }
+.mission-shell .mission-report-table th { color: var(--dash-muted); font-size: .8125rem; background: #17263d; border-color: var(--dash-border); }
+.mission-shell .mission-report-table td { color: var(--dash-text); border-color: var(--dash-border); }
+.mission-shell .mission-report-table td:first-child,
+.mission-shell .mission-report-table td:nth-child(3) { color: var(--dash-accent-soft); }
+.mission-shell .mission-report-table tbody tr:nth-child(even) { background: #26395366; }
+.mission-shell .mission-report-notes dd { color: var(--dash-text); }
+.mission-shell .mission-report-notes dl div { border-color: var(--dash-border); }
+.mission-shell .mission-severity { font-size: .75rem; }
+.mission-shell .mission-severity-high { background: #543339; color: #ffc0b2; }
+.mission-shell .mission-severity-medium { background: #4a4029; color: #ffe09b; }
+.mission-shell .mission-severity-low { background: #243d47; color: #a5f3fc; }
+.mission-shell .mission-ops-statusbar { background: var(--dash-raised); border-color: var(--dash-border); color: var(--dash-muted); font-size: .8125rem; }
+.mission-shell .mission-ops-statusbar b { color: var(--dash-text); }
+.mission-shell .mission-ops-metric-row { color: var(--dash-muted); font-size: .8125rem; border-color: var(--dash-border); gap: 12px; }
+.mission-shell .mission-ops-metric-row strong { color: var(--dash-text); font-size: 1rem; }
+.mission-shell .mission-ops-metric-row strong.text-good { color: var(--dash-cyan); }
+.mission-shell .mission-ops-check,
+.mission-shell .mission-control-option { color: var(--dash-text); border-color: var(--dash-border); }
+.mission-shell .mission-control-option input { accent-color: var(--dash-accent); }
+.mission-shell .mission-aero-visual { background: radial-gradient(circle at 55% 46%, #8b5cf644, transparent 45%), #292942; }
+.mission-shell .mission-aero-radar b,
+.mission-shell .mission-ops-coordinate { color: var(--dash-muted); font-size: .8125rem; }
+.mission-shell .mission-map-surface { background-color: #292942; border-color: var(--dash-border); }
+.mission-shell .mission-route-row { color: var(--dash-muted); border-color: var(--dash-border); }
+.mission-shell .mission-route-row i,
+.mission-shell .mission-route-row b { color: var(--dash-muted); font-size: .75rem; }
+.mission-shell .mission-route-row.active { background: #38294e; color: var(--dash-text); }
+.mission-shell .mission-route-row.active i,
+.mission-shell .mission-route-row.active b { color: var(--dash-accent-soft); }
+.mission-shell .mission-waypoint { background: var(--dash-raised); border-color: var(--dash-border); }
+.mission-shell .mission-waypoint strong { color: var(--dash-text); }
+.mission-shell .mission-waypoint span { color: var(--dash-muted); font-size: .875rem; }
+.mission-shell .mission-footer { color: var(--dash-muted); font-size: .75rem; border-top: 1px solid var(--dash-border); }
+
+@media (max-width: 1350px) {
+  .mission-shell .mission-header { grid-template-columns: 1fr auto; }
+  .mission-shell .mission-nav { grid-column: 1 / -1; order: 3; justify-content: center; }
+  .mission-shell .mission-console { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 680px) {
+  .mission-shell .mission-console { grid-template-columns: minmax(0, 1fr); }
+  .mission-shell .mission-nav { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); width: 100%; }
+  .mission-shell .mission-nav button { padding: 10px 8px; font-size: .8125rem; }
+  .mission-shell .mission-telemetry { flex-wrap: wrap; font-size: .6875rem; }
+}

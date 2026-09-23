@@ -27,6 +27,6 @@ app.use((error: unknown, _req: express.Request, res: express.Response, _next: ex
   return res.status(500).json({ error: "The server could not complete the request." });
 });
 
-app.listen(port, () => {
+app.listen(port, "0.0.0.0", () => {
   console.log(`SagarNetra API listening on http://127.0.0.1:${port}`);
 });

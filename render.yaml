@@ -7,6 +7,7 @@ services:
     buildCommand: pip install -r requirements.txt
     startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
     plan: free
+    healthCheckPath: /health
     envVars:
       - key: ML_API_KEY
         generateValue: true
@@ -16,23 +17,22 @@ services:
     name: sagarnetra-api
     runtime: node
     rootDir: server
-    buildCommand: npm install && npm run build
-    startCommand: node dist/server.js
+    buildCommand: npm ci && npm run build
+    startCommand: npm start
     plan: free
+    healthCheckPath: /health
     envVars:
       - key: NODE_ENV
         value: production
-      - key: PORT
-        value: 4000
-      - key: ML_SERVICE_URL
+      - key: ML_API_URL
         fromService:
           name: sagarnetra-ml
           type: web
-          property: host
+          envVarKey: RENDER_EXTERNAL_URL
       - key: ML_API_KEY
         fromService:
           name: sagarnetra-ml
           type: web
           envVarKey: ML_API_KEY
       - key: CLIENT_ORIGIN
-        value: https://your-app.netlify.app
+        sync: false
